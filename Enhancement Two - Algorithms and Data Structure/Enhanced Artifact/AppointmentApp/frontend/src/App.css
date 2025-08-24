@@ -1,0 +1,137 @@
+/* Global body styles and background */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #f0f4f8, #e2ebf0);
+  margin: 0;
+  padding: 0;
+}
+
+/* Main app container */
+.App {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Main heading style */
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form layout for adding appointments */
+.form-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* Layout for export buttons */
+.export-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+/* General input styles */
+input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+}
+
+/* Specific widths for each input type */
+input.id-input {
+  width: 100px;
+}
+
+input.date-input {
+  width: 140px;
+}
+
+input.description-input {
+  width: 300px;
+}
+
+/* Button for adding appointments */
+.add-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+/* Export button styles */
+.export-btn {
+  background-color: #20b2aa;
+  /* Teal */
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.export-btn:hover {
+  background-color: #1a8f8a;
+  /* Darker teal */
+}
+
+/* Layout for previous and upcoming appointment columns */
+.columns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Individual column box styling */
+.column {
+  flex: 1;
+  max-width: 450px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Column heading styling */
+.column h2 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* Card style for each appointment entry */
+.appointment-card {
+  background-color: #fafafa;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Delete button for each appointment */
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
