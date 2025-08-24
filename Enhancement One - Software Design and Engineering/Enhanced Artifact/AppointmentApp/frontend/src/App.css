@@ -1,0 +1,114 @@
+/* Global body styles */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #f0f4f8, #e2ebf0);
+  margin: 0;
+  padding: 0;
+}
+
+/* Main app container */
+.App {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Main title */
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form layout */
+.form-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+/* Input styles */
+input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+}
+
+/* Narrow input for short IDs */
+input.id-input {
+  width: 100px;
+}
+
+/* Narrow width for date inputs */
+input.date-input {
+  width: 140px;
+}
+
+/* Wider input for descriptions */
+input.description-input {
+  width: 300px;
+}
+
+/* Add button styles */
+.add-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+/* Columns container */
+.columns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Individual column styling */
+.column {
+  flex: 1;
+  max-width: 450px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.column h2 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* Card style for each appointment */
+.appointment-card {
+  background-color: #fafafa;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Delete button style */
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
