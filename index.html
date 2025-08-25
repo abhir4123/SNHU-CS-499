@@ -1,20 +1,45 @@
 <html>
   <head>
     <title>Abhilash Krishna Raj's CS-499 ePortfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-      body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-      h1, h2 { color: #2c3e50; }
-      nav { margin-bottom: 20px; }
-      nav a { margin-right: 15px; text-decoration: none; color: #007acc; }
+      :root{
+        --ink:#2c3e50; --link:#007acc; --muted:#555; --card:#ffffff; --line:#e5e7eb;
+        --bg:#f8fafc;
+      }
+      * { box-sizing: border-box; }
+      body { font-family: Arial, sans-serif; margin: 40px auto; max-width: 980px; line-height: 1.6; color: var(--ink); background: var(--bg); padding: 0 16px; }
+      h1, h2 { color: var(--ink); margin-top: 0; }
+      p { color: var(--muted); }
+      nav { margin: 20px 0 28px; display: flex; flex-wrap: wrap; gap: 12px; }
+      nav a { text-decoration: none; color: var(--link); padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; background: #fff; }
       section { margin-bottom: 40px; }
-      .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+      .card { background: var(--card); border: 1px solid var(--line); padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,.03); }
+      .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .cards .card h3 { margin-top: 4px; }
+      @media (max-width: 900px){ .cards { grid-template-columns: 1fr; } }
+
+      /* Collapsible self-assessment */
+      details { border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+      details > summary {
+        cursor: pointer; user-select: none; list-style: none;
+        padding: 14px 16px; font-weight: 600; color: var(--ink);
+        display: flex; align-items: center; gap: 10px;
+      }
+      details[open] > summary { border-bottom: 1px solid var(--line); }
+      summary::marker { display: none; }
+      .chev { transition: transform .2s ease; }
+      details[open] .chev { transform: rotate(90deg); }
+      .sa-body { padding: 16px; color: var(--muted); }
+      .links-row a { margin-right: 14px; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .95rem; }
     </style>
   </head>
   <body>
     <h1>Welcome to My CS-499 ePortfolio</h1>
     <p>
-      This site presents my capstone project and professional growth as a Computer Science major at SNHU. 
-      It includes my professional self-assessment, enhanced artifacts, and project narratives that demonstrate 
+      This site presents my capstone project and professional growth as a Computer Science major at SNHU.
+      It includes my professional self-assessment, enhanced artifacts, and project narratives that demonstrate
       my skills in software engineering, algorithms, databases, and security.
     </p>
 
@@ -26,46 +51,62 @@
       <a href="#narratives">Narratives</a>
     </nav>
 
-    <!-- Section 1: Self-Assessment -->
+    <!-- Section 1: Self-Assessment (collapsible) -->
     <section id="self-assessment" class="card">
       <h2>📄 Professional Self-Assessment</h2>
       <p>
-        Read my full self-assessment where I reflect on my strengths, professional goals, and how this program 
-        prepared me to enter the computer science field.
+        Read my self-assessment directly below, or use the links to view or download the original DOCX.
       </p>
-      <a href="Professional Self-Assessment.docx">Download Self-Assessment (DOCX)</a>
+      <div class="links-row">
+        <a href="Professional Self-Assessment.docx">Download Self-Assessment (DOCX)</a>
+        <a href="https://github.com/abhir4123/SNHU-CS-499/blob/main/Professional%20Self-Assessment.docx" target="_blank" rel="noopener">View in GitHub Repository</a>
+      </div>
+      <br />
+
+      <details>
+        <summary>
+          <span class="chev">▶</span>
+          Toggle to show or hide the full Professional Self-Assessment
+        </summary>
+        <div class="sa-body">
+          <p>Completing my coursework in the Computer Science program and developing my ePortfolio has allowed me to showcase my technical strengths while preparing for real-world work. In collaborative environments, I worked on group assignments like the Scrum Team Roleplay in CS-250 Software Development Lifecycle, which helped me develop teamwork and project management skills by using GitHub for version control and practicing how to integrate code across a team. Communicating with stakeholders was emphasized in CS-255 System Analysis and Design, where I built the ability to gather requirements, weigh tradeoffs, and present technical designs in clear language that non-technical audiences could understand. I strengthened my foundation in data structures and algorithms through MAT-243 Applied Statistics for STEM and CS-330 Computer Graphics and Visualization, where I learned how to analyze large data sets efficiently with Python’s statistical methods and applied low-level structures like vertex arrays and transformation matrices in C++ with OpenGL to optimize 3D rendering. In software engineering and database courses like CS-465 Full Stack Development I and DAD-220 Intro to Structural Database Environments, I built skills in designing and deploying scalable full-stack systems by working with the MEAN stack, REST APIs, authentication, and relational schemas, gaining confidence in bridging frontend, backend, and database layers. Security was another recurring theme, as in CYB-200 Cybersecurity Foundation and CS-305 Software Security, I developed the ability to apply principles like the CIA triad, access control, and threat modeling to secure applications through validation, safe error handling, and risk management. I was able to apply all of these skills in my capstone ePortfolio enhancements, where I combined database integration, secure API design, algorithmic decision-making, stakeholder-focused documentation, and collaborative workflows into a single, cohesive project. Altogether, these experiences not only demonstrate my readiness to enter the computer science profession and bring me a step closer to my professional goal of being a Full-Stack Software Engineer, but also reflect the well-rounded foundation I have built across software engineering, data, security, and communication.</p>
+          <p>The artifacts in my ePortfolio demonstrate how my skills fit together across the full project lifecycle, beginning with the AppointmentService system I created in CS-320 Software Testing, Automation, and Quality Assurance, and enhanced across multiple categories to highlight different dimensions of growth. In category one, Software Design and Engineering, I transformed a small in-memory backend into a structured full-stack application with a Spring Boot REST API and a React frontend, showing my ability to design modular and scalable software. In Category Two, Algorithms and Data Structures, I introduced a TreeMap alongside the existing HashMap structure to optimize retrieval efficiency and deterministic ordering, while also adding CSV and JSON export functionality to the frontend, which showcased both my understanding of data structures and my ability to extend them into user-facing features that support collaboration. In Category Three, Databases, I integrated MongoDB for persistent storage, added JWT-based authentication, and refined repository queries for chronological and range-based access, demonstrating my ability to deliver secure, production-ready applications with real-world persistence. Together, these enhancements form a cohesive progression from basic service design to advanced full-stack engineering, highlighting not only my technical strengths but also my capacity to refine and expand a project over time. This portfolio introduces the artifacts that follow as a comprehensive representation of my abilities in software engineering, data, algorithms, and security.</p>
+        </div>
+      </details>
     </section>
 
     <!-- Section 2: Code Review -->
     <section id="code-review" class="card">
       <h2>🎥 Code Review</h2>
       <p>
-        Watch my milestone one code review, where I discuss the original artifact and my planned enhancements 
+        Watch my milestone one code review, where I discuss the original artifact and my planned enhancements
         for the capstone project.
       </p>
-      <a href="https://youtu.be/zHCyWbz1W30" target="_blank">Watch Code Review on YouTube</a>
+      <a href="https://youtu.be/zHCyWbz1W30" target="_blank" rel="noopener">Watch Code Review on YouTube</a>
     </section>
 
     <!-- Section 3: Enhanced Artifacts -->
     <section id="artifacts">
       <h2>💻 Enhanced Artifacts</h2>
 
-      <div class="card">
-        <h3>Enhancement One: Software Design and Engineering</h3>
-        <p>Full-stack redesign with Spring Boot and React.</p>
-        <a href="Enhancement One - Software Design and Engineering/">View Files</a>
-      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Enhancement One: Software Design and Engineering</h3>
+          <p>Full-stack redesign with Spring Boot and React.</p>
+          <a href="Enhancement One - Software Design and Engineering/">View Files</a>
+        </div>
 
-      <div class="card">
-        <h3>Enhancement Two: Algorithms and Data Structures</h3>
-        <p>Introduced TreeMap + HashMap, and added CSV/JSON export features.</p>
-        <a href="Enhancement Two - Algorithms and Data Structures/">View Files</a>
-      </div>
+        <div class="card">
+          <h3>Enhancement Two: Algorithms and Data Structures</h3>
+          <p>Introduced TreeMap + HashMap and added CSV/JSON export features.</p>
+          <a href="Enhancement Two - Algorithms and Data Structures/">View Files</a>
+        </div>
 
-      <div class="card">
-        <h3>Enhancement Three: Databases</h3>
-        <p>Integrated MongoDB, added JWT authentication, and refined repository queries.</p>
-        <a href="Enhancement Three - Databases/">View Files</a>
+        <div class="card">
+          <h3>Enhancement Three: Databases</h3>
+          <p>Integrated MongoDB, added JWT authentication, and refined repository queries.</p>
+          <a href="Enhancement Three - Databases/">View Files</a>
+        </div>
       </div>
     </section>
 
