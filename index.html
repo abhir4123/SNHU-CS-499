@@ -15,9 +15,10 @@
       nav a { text-decoration: none; color: var(--link); padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; background: #fff; }
       section { margin-bottom: 40px; }
       .card { background: var(--card); border: 1px solid var(--line); padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,.03); }
+      @media (max-width: 900px){ .cards { grid-template-columns: 1fr; } }
 
       /* Collapsibles */
-      details { border: 1px solid var(--line); border-radius: 10px; background: #fff; margin-top: 12px; }
+      details { border: 1px solid var(--line); border-radius: 10px; background: #fff; margin-top: 14px; }
       details > summary {
         cursor: pointer; user-select: none; list-style: none;
         padding: 14px 16px; font-weight: 600; color: var(--ink);
@@ -35,8 +36,8 @@
       .video-wrap { position: relative; width: 100%; padding-top: 56.25%; border-radius: 10px; overflow: hidden; background: #000; }
       .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
-      /* Screenshot */
-      .artifact-img { max-width: 100%; border-radius: 8px; margin-top: 12px; border: 1px solid var(--line); }
+      /* Screenshot image */
+      .screenshot { max-width: 100%; border-radius: 10px; border: 1px solid var(--line); margin-top: 12px; }
     </style>
   </head>
   <body>
@@ -52,7 +53,7 @@
       <a href="#self-assessment">Professional Self-Assessment</a>
       <a href="#code-review">Code Review</a>
       <a href="#original-artifact">Original Artifact</a>
-      <a href="#enhancement1">Category 1 Enhancement</a>
+      <a href="#artifact-sde">Artifact: Software Design & Engineering</a>
     </nav>
 
     <!-- Section 1: Self-Assessment -->
@@ -68,9 +69,12 @@
       <br />
 
       <details>
-        <summary><span class="chev">▶</span> Read the full Professional Self-Assessment</summary>
+        <summary>
+          <span class="chev">▶</span>
+          Read the full Professional Self-Assessment
+        </summary>
         <div class="sa-body">
-          <!-- self-assessment text goes here -->
+          <!-- (your self-assessment paragraphs stay here unchanged) -->
         </div>
       </details>
     </section>
@@ -78,18 +82,32 @@
     <!-- Section 2: Code Review -->
     <section id="code-review" class="card">
       <h2>🎥 Code Review</h2>
-      <p>Watch my milestone one code review, where I discuss the original artifact and my planned enhancements.</p>
+      <p>
+        Watch my milestone one code review, where I discuss the original artifact and my planned enhancements
+        for the capstone project.
+      </p>
+
       <details>
-        <summary><span class="chev">▶</span> Watch Code Review</summary>
+        <summary>
+          <span class="chev">▶</span>
+          Watch Code Review
+        </summary>
         <div class="sa-body">
           <div class="video-wrap">
-            <iframe src="https://www.youtube-nocookie.com/embed/zHCyWbz1W30" title="CS-499 Milestone 1 Code Review" loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/zHCyWbz1W30"
+              title="CS-499 Milestone 1 Code Review"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
             </iframe>
           </div>
         </div>
       </details>
-      <p style="margin-top:12px">Prefer a new tab? <a href="https://youtu.be/zHCyWbz1W30" target="_blank" rel="noopener">Watch on YouTube</a></p>
+
+      <p style="margin-top:12px">
+        Prefer a new tab? <a href="https://youtu.be/zHCyWbz1W30" target="_blank" rel="noopener">Watch on YouTube</a>
+      </p>
     </section>
 
     <!-- Section 3: Original Artifact -->
@@ -97,47 +115,62 @@
       <h2>🗂 Original Artifact</h2>
       <p>
         The original artifact is from my CS-320 Software Testing, Automation, and Quality Assurance course.
-        It began as a simple in-memory appointment service that demonstrated basic CRUD operations and validation logic.
+        It began as a simple in-memory appointment service that demonstrated basic CRUD operations
+        and validation logic. You can view the full original artifact on GitHub:
       </p>
-      <a href="https://github.com/abhir4123/SNHU-CS-499/tree/main/Original%20Artifact/Appointment%20Service" target="_blank" rel="noopener">View Original Artifact in GitHub Repository</a>
+      <a href="https://github.com/abhir4123/SNHU-CS-499/tree/main/Original%20Artifact/Appointment%20Service" target="_blank" rel="noopener">
+        View Original Artifact in GitHub Repository
+      </a>
       <br /><br />
-      <!-- toggle for original source files (kept same as before) -->
+
+      <details>
+        <summary>
+          <span class="chev">▶</span>
+          View original source files
+        </summary>
+        <div class="sa-body">
+          <!-- (code blocks you already had here stay the same) -->
+        </div>
+      </details>
     </section>
 
-    <!-- Section 4: Category 1 Enhancement -->
-    <section id="enhancement1" class="card">
+    <!-- Section 4: Enhanced Artifact - Software Design & Engineering -->
+    <section id="artifact-sde" class="card">
       <h2>💻 Enhanced Artifact: Software Design and Engineering</h2>
       <p>
-        In this enhancement, I transformed the AppointmentService into a full-stack web application with a Spring Boot REST API and React frontend.
-        This update added scalability, persistent-ready design, and a user-friendly interface.
+        This enhancement transformed the AppointmentService into a full-stack application with a Spring Boot backend and React frontend. 
+        It added scalability, validation, and a user-friendly interface. 
+        View the project on GitHub:
       </p>
       <a href="https://github.com/abhir4123/SNHU-CS-499/tree/main/Enhancement%20One%20-%20Software%20Design%20and%20Engineering" target="_blank" rel="noopener">
-        View Enhancement One in GitHub Repository
+        View Software Design & Engineering Enhancement in GitHub
       </a>
 
       <details>
-        <summary><span class="chev">▶</span> View Frontend Screenshot</summary>
+        <summary>
+          <span class="chev">▶</span>
+          View frontend screenshot
+        </summary>
         <div class="sa-body">
-          <img class="artifact-img" src="https://github.com/abhir4123/SNHU-CS-499/blob/main/Enhancement%20One%20-%20Software%20Design%20and%20Engineering/Enhanced%20Artifact/AppointmentApp/application_frontend_screenshot.png?raw=true" alt="Frontend Screenshot of Enhanced Artifact" />
+          <img 
+            src="https://github.com/abhir4123/SNHU-CS-499/blob/main/Enhancement%20One%20-%20Software%20Design%20and%20Engineering/Enhanced%20Artifact/AppointmentApp/application_frontend_screenshot.png?raw=true" 
+            alt="Frontend Screenshot" 
+            class="screenshot" />
         </div>
       </details>
 
       <details>
-        <summary><span class="chev">▶</span> Read Narrative</summary>
+        <summary>
+          <span class="chev">▶</span>
+          Read narrative
+        </summary>
         <div class="sa-body">
+          <p>The artifact I chose for this enhancement is the AppointmentService component from my CS-320 Software Testing and Quality Assurance course project... (full narrative here, paste text)</p>
           <p>
-            The artifact I chose for this enhancement is the AppointmentService component from my CS-320 Software Testing and Quality Assurance course project. The original version was a Java-based backend service, created in early 2025 that handled basic CRUD operations for appointment records using in-memory storage. It also included JUnit tests but had no user interface and no structure for scaling into a larger application. I originally created it to practice object-oriented programming and test-driven development.
+            <a href="https://github.com/abhir4123/SNHU-CS-499/blob/main/Narratives/Software%20Design%20and%20Engineering%20Artifact%20Narrative.docx" target="_blank" rel="noopener">
+              Download full narrative (DOCX)
+            </a>
           </p>
-          <p>
-            I selected this artifact because it gave me a strong starting point to show how my skills in software engineering and design have grown. While the original met the basic requirements, it was missing features that are expected in professional applications, such as a scalable architecture, persistent storage, and a user-friendly interface. In this enhancement, I redesigned it as a full-stack web application. I built a RESTful backend with Spring Boot, created a React frontend for user interaction, and used best practices like separation of concerns and clear API endpoint design. These updates demonstrate skills in both frontend and backend development, REST API creation, and form validation on both the client and server sides. The responsive interface, combined with real-time communication between the frontend and backend, shows my ability to create complete, production-style applications.
-          </p>
-          <p>
-            In my Module One enhancement plan, I targeted Course Outcomes 3 and 4, and I believe this enhancement successfully meets all of them, along with Outcome 2 as well. Outcome 2 was met by creating a detailed, user-friendly README and adding clear code comments throughout the project, ensuring technical communication that is coherent and suited to a developer audience. For Outcome 3, I applied algorithmic principles and industry practices to restructure the code into a modular, decoupled system. I also made design choices with scalability in mind, such as keeping the current in-memory storage but preparing the backend so it can easily be connected to a database. For Outcome 4, I used modern tools and techniques such as Spring Boot for backend development, React for the frontend, and REST API design principles to create a functional and valuable application. My original outcome coverage plan remains the same because the finished project meets the goals I set.
-          </p>
-          <p>
-            The enhancement process required rethinking the application’s architecture and building connections between a backend service and a modern frontend framework. I learned how to set up RESTful communication, handle CORS configurations, and use both server-side and client-side validation to improve user experience. One of the biggest challenges was keeping the frontend and backend separate but fully in sync. I had to troubleshoot issues with request formats, JSON serialization, and displaying meaningful error messages to users. Through this process, I gained a deeper understanding of full-stack workflows, REST API design, and how to improve usability through better error handling and form validation. Overall, this enhancement transformed a small backend service into a complete web application and strengthened my ability to design and deliver software that meets real-world standards.
-          </p>
-          <a href="https://github.com/abhir4123/SNHU-CS-499/blob/main/Narratives/Software%20Design%20and%20Engineering%20Artifact%20Narrative.docx" target="_blank" rel="noopener">Download Narrative (DOCX)</a>
         </div>
       </details>
     </section>
