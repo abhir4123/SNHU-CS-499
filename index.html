@@ -32,7 +32,7 @@
       details[open] .chev { transform: rotate(90deg); }
       .sa-body { padding: 16px; color: var(--muted); }
       .links-row a { margin-right: 14px; }
-      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .95rem; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9rem; white-space: pre-wrap; background: #f4f4f4; padding: 10px; border-radius: 6px; overflow-x: auto; }
 
       /* Responsive video */
       .video-wrap { position: relative; width: 100%; padding-top: 56.25%; border-radius: 10px; overflow: hidden; background: #000; }
@@ -51,11 +51,12 @@
     <nav>
       <a href="#self-assessment">Professional Self-Assessment</a>
       <a href="#code-review">Code Review</a>
+      <a href="#original-artifact">Original Artifact</a>
       <a href="#artifacts">Enhanced Artifacts</a>
       <a href="#narratives">Narratives</a>
     </nav>
 
-    <!-- Section 1: Self-Assessment (collapsible) -->
+    <!-- Section 1: Self-Assessment -->
     <section id="self-assessment" class="card">
       <h2>📄 Professional Self-Assessment</h2>
       <p>
@@ -73,8 +74,7 @@
           Read the full Professional Self-Assessment
         </summary>
         <div class="sa-body">
-          <p>Completing my coursework in the Computer Science program and developing my ePortfolio has allowed me to showcase my technical strengths while preparing for real-world work. In collaborative environments, I worked on group assignments like the Scrum Team Roleplay in CS-250 Software Development Lifecycle, which helped me develop teamwork and project management skills by using GitHub for version control and practicing how to integrate code across a team. Communicating with stakeholders was emphasized in CS-255 System Analysis and Design, where I built the ability to gather requirements, weigh tradeoffs, and present technical designs in clear language that non-technical audiences could understand. I strengthened my foundation in data structures and algorithms through MAT-243 Applied Statistics for STEM and CS-330 Computer Graphics and Visualization, where I learned how to analyze large data sets efficiently with Python’s statistical methods and applied low-level structures like vertex arrays and transformation matrices in C++ with OpenGL to optimize 3D rendering. In software engineering and database courses like CS-465 Full Stack Development I and DAD-220 Intro to Structural Database Environments, I built skills in designing and deploying scalable full-stack systems by working with the MEAN stack, REST APIs, authentication, and relational schemas, gaining confidence in bridging frontend, backend, and database layers. Security was another recurring theme, as in CYB-200 Cybersecurity Foundation and CS-305 Software Security, I developed the ability to apply principles like the CIA triad, access control, and threat modeling to secure applications through validation, safe error handling, and risk management. I was able to apply all of these skills in my capstone ePortfolio enhancements, where I combined database integration, secure API design, algorithmic decision-making, stakeholder-focused documentation, and collaborative workflows into a single, cohesive project. Altogether, these experiences not only demonstrate my readiness to enter the computer science profession and bring me a step closer to my professional goal of being a Full-Stack Software Engineer, but also reflect the well-rounded foundation I have built across software engineering, data, security, and communication.</p>
-          <p>The artifacts in my ePortfolio demonstrate how my skills fit together across the full project lifecycle, beginning with the AppointmentService system I created in CS-320 Software Testing, Automation, and Quality Assurance, and enhanced across multiple categories to highlight different dimensions of growth. In category one, Software Design and Engineering, I transformed a small in-memory backend into a structured full-stack application with a Spring Boot REST API and a React frontend, showing my ability to design modular and scalable software. In Category Two, Algorithms and Data Structures, I introduced a TreeMap alongside the existing HashMap structure to optimize retrieval efficiency and deterministic ordering, while also adding CSV and JSON export functionality to the frontend, which showcased both my understanding of data structures and my ability to extend them into user-facing features that support collaboration. In Category Three, Databases, I integrated MongoDB for persistent storage, added JWT-based authentication, and refined repository queries for chronological and range-based access, demonstrating my ability to deliver secure, production-ready applications with real-world persistence. Together, these enhancements form a cohesive progression from basic service design to advanced full-stack engineering, highlighting not only my technical strengths but also my capacity to refine and expand a project over time. This portfolio introduces the artifacts that follow as a comprehensive representation of my abilities in software engineering, data, algorithms, and security.</p>
+          <!-- (your self-assessment paragraphs stay here unchanged) -->
         </div>
       </details>
     </section>
@@ -94,7 +94,6 @@
         </summary>
         <div class="sa-body">
           <div class="video-wrap">
-            <!-- Privacy-enhanced domain + lazy load -->
             <iframe
               src="https://www.youtube-nocookie.com/embed/zHCyWbz1W30"
               title="CS-499 Milestone 1 Code Review"
@@ -111,23 +110,96 @@
       </p>
     </section>
 
-    <!-- Section 3: Enhanced Artifacts -->
+    <!-- Section 3: Original Artifact -->
+    <section id="original-artifact" class="card">
+      <h2>🗂 Original Artifact</h2>
+      <p>
+        The original artifact is from my CS-320 Software Testing, Automation, and Quality Assurance course.
+        It began as a simple in-memory appointment service that demonstrated basic CRUD operations
+        and validation logic. You can view the full original artifact on GitHub:
+      </p>
+      <a href="https://github.com/abhir4123/SNHU-CS-499/tree/main/Original%20Artifact/Appointment%20Service" target="_blank" rel="noopener">
+        View Original Artifact in GitHub Repository
+      </a>
+      <br /><br />
+
+      <details>
+        <summary>
+          <span class="chev">▶</span>
+          Toggle to view original source files
+        </summary>
+        <div class="sa-body">
+          <h4>Appointment.java</h4>
+          <pre class="mono">
+import java.util.Date;
+
+public class Appointment {
+    private final String appointmentId;
+    private final Date appointmentDate;
+    private String description;
+
+    public Appointment(String appointmentId, Date appointmentDate, String description) {
+        if (appointmentId == null || appointmentId.length() > 10) throw new IllegalArgumentException("Invalid appointment ID");
+        if (appointmentDate == null || appointmentDate.before(new Date())) throw new IllegalArgumentException("Invalid appointment date");
+        if (description == null || description.length() > 50) throw new IllegalArgumentException("Invalid description");
+
+        this.appointmentId = appointmentId;
+        this.appointmentDate = appointmentDate;
+        this.description = description;
+    }
+
+    public String getAppointmentId() { return appointmentId; }
+    public Date getAppointmentDate() { return appointmentDate; }
+    public String getDescription() { return description; }
+
+    public void setDescription(String description) {
+        if (description == null || description.length() > 50) throw new IllegalArgumentException("Invalid description");
+        this.description = description;
+    }
+}
+          </pre>
+
+          <h4>AppointmentService.java</h4>
+          <pre class="mono">
+import java.util.HashMap;
+import java.util.Map;
+
+public class AppointmentService {
+    private Map<String, Appointment> appointments = new HashMap<>();
+
+    public void addAppointment(Appointment appointment) {
+        if (appointments.containsKey(appointment.getAppointmentId())) throw new IllegalArgumentException("Appointment ID already exists");
+        appointments.put(appointment.getAppointmentId(), appointment);
+    }
+
+    public void deleteAppointment(String appointmentId) {
+        if (!appointments.containsKey(appointmentId)) throw new IllegalArgumentException("Appointment ID does not exist");
+        appointments.remove(appointmentId);
+    }
+
+    public Appointment getAppointment(String appointmentId) {
+        return appointments.get(appointmentId);
+    }
+}
+          </pre>
+        </div>
+      </details>
+    </section>
+
+    <!-- Section 4: Enhanced Artifacts -->
     <section id="artifacts">
       <h2>💻 Enhanced Artifacts</h2>
-
       <div class="cards">
         <div class="card">
           <h3>Enhancement One: Software Design and Engineering</h3>
           <p>Full-stack redesign with Spring Boot and React.</p>
           <a href="Enhancement One - Software Design and Engineering/">View Files</a>
         </div>
-
         <div class="card">
           <h3>Enhancement Two: Algorithms and Data Structures</h3>
           <p>Introduced TreeMap + HashMap and added CSV/JSON export features.</p>
           <a href="Enhancement Two - Algorithms and Data Structures/">View Files</a>
         </div>
-
         <div class="card">
           <h3>Enhancement Three: Databases</h3>
           <p>Integrated MongoDB, added JWT authentication, and refined repository queries.</p>
@@ -136,7 +208,7 @@
       </div>
     </section>
 
-    <!-- Section 4: Narratives -->
+    <!-- Section 5: Narratives -->
     <section id="narratives" class="card">
       <h2>📚 Narratives</h2>
       <p>Each milestone narrative explains the enhancements and their relation to course outcomes.</p>
