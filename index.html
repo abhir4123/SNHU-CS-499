@@ -19,7 +19,7 @@
       .cards .card h3 { margin-top: 4px; }
       @media (max-width: 900px){ .cards { grid-template-columns: 1fr; } }
 
-      /* Collapsible self-assessment */
+      /* Collapsibles */
       details { border: 1px solid var(--line); border-radius: 10px; background: #fff; }
       details > summary {
         cursor: pointer; user-select: none; list-style: none;
@@ -33,6 +33,10 @@
       .sa-body { padding: 16px; color: var(--muted); }
       .links-row a { margin-right: 14px; }
       .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .95rem; }
+
+      /* Responsive video */
+      .video-wrap { position: relative; width: 100%; padding-top: 56.25%; border-radius: 10px; overflow: hidden; background: #000; }
+      .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
     </style>
   </head>
   <body>
@@ -66,7 +70,7 @@
       <details>
         <summary>
           <span class="chev">▶</span>
-          Toggle to show or hide the full Professional Self-Assessment
+          Read the full Professional Self-Assessment
         </summary>
         <div class="sa-body">
           <p>Completing my coursework in the Computer Science program and developing my ePortfolio has allowed me to showcase my technical strengths while preparing for real-world work. In collaborative environments, I worked on group assignments like the Scrum Team Roleplay in CS-250 Software Development Lifecycle, which helped me develop teamwork and project management skills by using GitHub for version control and practicing how to integrate code across a team. Communicating with stakeholders was emphasized in CS-255 System Analysis and Design, where I built the ability to gather requirements, weigh tradeoffs, and present technical designs in clear language that non-technical audiences could understand. I strengthened my foundation in data structures and algorithms through MAT-243 Applied Statistics for STEM and CS-330 Computer Graphics and Visualization, where I learned how to analyze large data sets efficiently with Python’s statistical methods and applied low-level structures like vertex arrays and transformation matrices in C++ with OpenGL to optimize 3D rendering. In software engineering and database courses like CS-465 Full Stack Development I and DAD-220 Intro to Structural Database Environments, I built skills in designing and deploying scalable full-stack systems by working with the MEAN stack, REST APIs, authentication, and relational schemas, gaining confidence in bridging frontend, backend, and database layers. Security was another recurring theme, as in CYB-200 Cybersecurity Foundation and CS-305 Software Security, I developed the ability to apply principles like the CIA triad, access control, and threat modeling to secure applications through validation, safe error handling, and risk management. I was able to apply all of these skills in my capstone ePortfolio enhancements, where I combined database integration, secure API design, algorithmic decision-making, stakeholder-focused documentation, and collaborative workflows into a single, cohesive project. Altogether, these experiences not only demonstrate my readiness to enter the computer science profession and bring me a step closer to my professional goal of being a Full-Stack Software Engineer, but also reflect the well-rounded foundation I have built across software engineering, data, security, and communication.</p>
@@ -82,7 +86,29 @@
         Watch my milestone one code review, where I discuss the original artifact and my planned enhancements
         for the capstone project.
       </p>
-      <a href="https://youtu.be/zHCyWbz1W30" target="_blank" rel="noopener">Watch Code Review on YouTube</a>
+
+      <details>
+        <summary>
+          <span class="chev">▶</span>
+          Toggle to show the embedded YouTube video
+        </summary>
+        <div class="sa-body">
+          <div class="video-wrap">
+            <!-- Privacy-enhanced domain + lazy load -->
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/zHCyWbz1W30"
+              title="CS-499 Milestone 1 Code Review"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </details>
+
+      <p style="margin-top:12px">
+        Prefer a new tab? <a href="https://youtu.be/zHCyWbz1W30" target="_blank" rel="noopener">Watch on YouTube</a>
+      </p>
     </section>
 
     <!-- Section 3: Enhanced Artifacts -->
